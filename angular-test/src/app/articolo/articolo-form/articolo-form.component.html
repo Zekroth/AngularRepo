@@ -1,0 +1,28 @@
+<p>articolo-form works!</p>
+<h3><i>Reactive form con form control</i></h3>
+<form [formGroup]="myForm" #form="ngForm" novalidate>
+  <div>
+    <label for="txtTitolo">Titolo:</label>
+      <input type="text" name="Titolo" id="Titolo" formControlName="txtTitolo">
+        <span [hidden]="myForm.controls.txtTitolo.valid || myForm.controls.txtTitolo.pristine">
+          Il titolo è obbligatorio e non può superare i 30 caratteri.
+        </span>
+  </div>
+  <div>
+    <label for="txtAutore">Autore:</label>
+      <input type="text" name="Autore" id="Autore" formControlName="txtAutore">
+        <span [hidden]="myForm.controls.txtAutore.valid">
+          L'autore è obbligatorio.
+        </span>
+  </div>
+  <div>
+    <label for="txtTesto">Testo:</label>
+      <input type="text" name="Testo" id="Testo" formControlName="txtTesto">
+        <span [hidden]="myForm.controls.txtTesto.valid">
+          Il testo è obbligatorio.
+        </span>
+  </div>
+  <button type="submit" (click)="visualizzaArticolo()" [disabled]="!myForm.valid">Invia</button>
+
+</form>
+<p>Form Value: {{myForm.value | json}}</p>

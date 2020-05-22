@@ -1,0 +1,11 @@
+{
+  "articles":[
+    {
+      "id":1,
+      "titolo": "Android AsyncTask Example",
+      "autore" : "Android",
+      "testo": "Lorem ipsum",
+      "apprezzamenti": 0
+    }
+  ]
+}
